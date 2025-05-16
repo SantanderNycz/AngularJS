@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body class="contanier" ng-app="aplicacao">
@@ -16,10 +16,10 @@
 	<nav class="navbar navbar-default" ng-controller="MenuController">
 		<div class="collapse navbar-collapse" id="menu">
 			<ul class="nav navbar-nav">
-				<li><a href="" ng-click="irInicio()">Início</a></li>
-				<li><a href="" ng-click="irListagem()">Alunos</a></li>
-				<li><a href="" ng-click="irCadastro()">Cadastro</a></li>
-				<li><a href="" ng-click="irPrevisao()">Previsão do Tempo</a></li>
+				<li><a href="./views/inicial.html" ng-click="irInicio()">Início</a></li>
+				<li><a href="./views/listagem-alunos.html" ng-click="irListagem()">Alunos</a></li>
+				<li><a href="./views/cadastro-aluno.html" ng-click="irCadastro()">Cadastro</a></li>
+				<li><a href="./views/previsao-do-tempo.html" ng-click="irPrevisao()">Previsão do Tempo</a></li>
 			</ul>
 		</div>
 	</nav>
