@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="contanier" ng-app="aplicacao">
+	<div class="header-inner">
+		<h1 style="text-align: center; color: blue;">
+			Bem Vindo ao Curso de Desenvolvimento WEB com Angular JS
+		</h1>
+	</div>
+	<nav class="navbar navbar-default" ng-controller="MenuController">
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="nav navbar-nav">
+				<li><a href="" ng-click="irInicio()">Início</a></li>
+				<li><a href="" ng-click="irListagem()">Alunos</a></li>
+				<li><a href="" ng-click="irCadastro()">Cadastro</a></li>
+				<li><a href="" ng-click="irPrevisao()">Previsão do Tempo</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div ui-view></div>
+	<div class="container-fluid container-fixed-lg footer">
+		<div class="copyright sm-text-center">
+			<p class="small no-margin pull-left sm-pull-reset">
+				<span class="hint-text">Copyright @ 2015</span>
+			</p>
+		</div>
+	</div>
+	<script src="scripts/libs/angular.js"></script>
+	<script src="scripts/libs/ngResource.js"></script>
+	<script src="scripts/libs/angular-ui-router.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/menu-controller.js"></script>
+	<script src="scripts/listagem-alunos-controller.js"></script>
+	<script src="scripts/nova-inscricao-controller.js"></script>
+	<script src="scripts/previsao-tempo-controller.js"></script>
+	<script src="scripts/alunos-collection-service.js"></script>
+	<script src="scripts/cadastro-aluno-directive.js"></script>
+</body>
+
+</html>

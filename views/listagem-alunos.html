@@ -1,0 +1,56 @@
+<div ng-controller="ListagemAlunosController">
+    <p>Olá, {{nome}} ! Seja bem-vindo!</p>
+    <div ng-class="{'panel panel-primary': iniciado, 'panel panel-danger: !iniciado'}">
+        <div class="panel-heading">
+            <h3 class="panel-title">Situação do Curso</h3>
+        </div>
+        <div class="panel-body">
+            <p ng-show="iniciado">Curso em Andamento</p>
+            <p ng-hide="iniciado">Curso Finalizado</p>
+            <p ng-if="!iniciado">Aguarde o Próximo Curso</p>
+            <p>Preço do Curso: {{valor | currency: 'R$ '}}</p>
+            <p>Última Atualização: {{hoje | date: 'dd/MM/yyyy'}}</p>
+        </div>
+    </div>
+    <div>
+        <label>Definir Preço:</label>
+        <input type="number" name="valor" id="valor" ng-model="valor">
+    </div>
+    <h3>Alunos Cadastrados</h3>
+    <div>
+        <label>Filtrar por Nome:</label>
+        <input type="text" name="" id="" ng-model="filtro">
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th ng-click="ordenarPorNome()">
+                    Nome
+                </th>
+                <th ng-click="ordenarPorIdade()">
+                    Idade
+                </th>
+            </tr>
+            <tr ng-repeat="aluno in alunos | filter: filtro">
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.idade}}</td>
+            </tr>
+    </div>
+    </table>
+    <button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">Finalizar</button>
+    <button ng-hide="iniciado" ng-click="inciar()" class="btn btn-success">Iniciar</button>
+    <br><br>
+    <button ng-click="exibeCadastro()" class="btn btn-primary">
+        <span ng-hide="cadastrar">Cadastrar</span>
+        <span ng-show="cadastrar">Ocultar</span>
+    </button>
+    <br><br>
+    <div class="panel panel-primary" ng-if="cadastrar">
+        <div class="panel-heading">
+            <h3 class="panel-title">Novo Cadastro</h3>
+        </div>
+        <div class="panel-body">
+            <cadastro-aluno></cadastro-aluno>
+        </div>
+    </div>
+</div>
